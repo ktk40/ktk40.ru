@@ -1,0 +1,252 @@
+/* hide google panel */
+.skiptranslate {
+    display: none !important;
+}
+
+/* remove link highlight */
+.goog-text-highlight {
+    background-color: inherit;
+    box-shadow: none;
+    box-sizing: inherit;
+}
+
+.language__img:hover,
+.language__img_active {
+    opacity: 1;
+}
+
+.ktk-translate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.ktk-translate select.ktk-form-control {
+    display: none;
+}
+
+.ktk-translate select.ktk-form-control:disabled ~ .select-items {
+    display: none !important;
+}
+
+.ktk-translate select.ktk-form-control-sm + .select-items div {
+    padding: 0.65625rem 2.49375rem 0.65625rem 0.875rem;
+}
+
+.ktk-translate select.ktk-form-control-lg + .select-items div {
+    padding: 0.9375rem 3.5625rem 0.9375rem 1.25rem;
+}
+
+.ktk-translate label {
+    cursor: pointer;
+    margin: 0;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.theme-dark .ktk-translate label:after {
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.theme-light .theme-dark .ktk-translate label:after {
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+}
+
+.theme-light .ktk-translate label:after {
+    border-bottom: 1px solid rgba(21, 25, 30, .87);
+    border-left: 1px solid rgba(21, 25, 30, .87);
+}
+
+.theme-dark .theme-light .ktk-translate label:after {
+    border-bottom: 1px solid rgba(21, 25, 30, .87);
+    border-left: 1px solid rgba(21, 25, 30, .87);
+}
+
+.ktk-translate label:after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.35rem);
+    right: 1rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border: none;
+    border-bottom: 1px solid rgba(21, 25, 30, .87);
+    border-left: 1px solid rgba(21, 25, 30, .87);
+    transform: rotate(-45deg);
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: transform 0.25s;
+}
+
+.ktk-translate label:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.theme-dark .ktk-translate label:hover {
+    background-color: rgba(255, 255, 255, .12);
+}
+
+.theme-light .theme-dark .ktk-translate label:hover {
+    background-color: rgba(255, 255, 255, .12);
+}
+
+.theme-light .ktk-translate label:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.theme-dark .theme-light .ktk-translate label:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.theme-dark .ktk-translate .select-items div {
+    background-color: #212529;
+}
+
+.theme-dark .ktk-translate .select-items div:hover {
+    background-color: #333;
+}
+
+.theme-light .theme-dark .ktk-translate .select-items div {
+    background-color: #212529;
+}
+
+.theme-light .theme-dark .ktk-translate .select-items div:hover {
+    background-color: #333;
+}
+
+.theme-light .ktk-translate .select-items div {
+    background-color: #fff;
+}
+
+.theme-dark .theme-light .ktk-translate .select-items div {
+    background-color: #fff;
+}
+
+.ktk-translate label.active {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.ktk-translate label.active:after {
+    transform: rotate(135deg);
+    top: calc(100% - 1.2rem);
+}
+
+.ktk-translate .select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 300;
+    border: none;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 6px 18px 0 rgba(0, 0, 0, .12);
+    box-sizing: border-box;
+    outline: none;
+}
+
+.ktk-translate .select-items.inactive {
+    display: none;
+}
+
+.ktk-translate .select-items div {
+    padding: 0.5rem 2.85rem 0.5rem 1rem;
+    cursor: pointer;
+    background-color: white;
+    color: inherit;
+    top: 100%;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.ktk-translate .select-items div:hover {
+    background-color: #eee;
+}
+
+.ktk-translate .select-items div.same-as-selected {
+    background-color: #eee;
+}
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+        opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+        opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+        opacity: .2;
+    }
+}
+
+.saving span {
+    /**
+     * Use the blink animation, which is defined above
+     */
+    animation-name: blink;
+    /**
+     * The animation should take 1.4 seconds
+     */
+    animation-duration: 1.4s;
+    /**
+     * It will repeat itself forever
+     */
+    animation-iteration-count: infinite;
+    /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+    animation-fill-mode: both;
+}
+
+.saving span:nth-child(2) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .2s;
+}
+
+.saving span:nth-child(3) {
+    /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+    animation-delay: .4s;
+}
+
+/**
+ * Remove default styles for select
+ */
+.ktk-translate.ktk-form-select label {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+.ktk-translate.ktk-form-select .select-items div:hover {
+    color: inherit;
+}
